@@ -1,0 +1,97 @@
+{
+    "name": "react-sketch-book",
+    "version": "0.0.34",
+    "description": "A module to easily build sketch Artboard with React Sketch.app or React Primitive",
+    "keywords": [
+        "sketch",
+        "react",
+        "storybook",
+        "react sketchapp",
+        "react primitive"
+    ],
+    "author": {
+        "name": "François Rosato",
+        "email": "francois.rosato@ekino.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:frosato-ekino/react-sketch-book.git"
+    },
+    "license": "MIT",
+    "main": "index.js",
+    "bin": {
+        "react-sketch-book": "bin/index.js"
+    },
+    "scripts": {
+        "watch": "skpm-build --watch",
+        "render": "skpm-build --watch --run",
+        "render:once": "skpm-build --run",
+        "postinstall": "skpm-build && skpm-link",
+        "fmt": "prettier --no-semi --tab-width=4 --single-quote --bracket-spacing --print-width 100 --write './**/*.{js,json,css}'",
+        "fmt:test": "prettier --list-different --no-semi --tab-width=4 --single-quote --bracket-spacing --print-width 100 './**/*.{js,json,css}'",
+        "fmt:staged": "prettier --no-semi --tab-width=4 --single-quote --bracket-spacing --print-width 100 --write",
+        "eslint:staged": "eslint --fix --max-warnings=0",
+        "eslint:test": "eslint ./src index.js"
+    },
+    "devDependencies": {
+        "husky": "^0.14.3",
+        "lint-staged": "^4.2.2",
+        "prettier": "^1.7.0",
+        "validate-commit-msg": "^2.14.0"
+    },
+    "dependencies": {
+        "@skpm/builder": "^0.2.0",
+        "commander": "^2.12.2",
+        "react": "^15.4.2",
+        "react-sketchapp": "^0.12.0",
+        "react-test-renderer": "^15.4.2",
+        "recursive-readdir": "^2.2.1",
+        "run-sketch-plugin": "^1.0.3"
+    },
+    "skpm": {
+        "main": "components.sketchplugin",
+        "manifest": "src/manifest.json"
+    },
+    "lint-staged": {
+        "src/**/*.json": [
+            "fmt:staged",
+            "git add"
+        ],
+        "src/**/*.js": [
+            "fmt:staged",
+            "eslint:staged",
+            "git add"
+        ]
+    },
+    "config": {
+        "validate-commit-msg": {
+            "types": [
+                "feat",
+                "fix",
+                "docs",
+                "style",
+                "refactor",
+                "perf",
+                "test",
+                "build",
+                "ci",
+                "chore",
+                "revert"
+            ],
+            "scope": {
+                "required": true,
+                "allowed": [
+                    "*"
+                ],
+                "validate": false,
+                "multiple": false
+            },
+            "warnOnFail": false,
+            "maxSubjectLength": 80,
+            "subjectPattern": ".+",
+            "subjectPatternErrorMsg": "subject does not match subject pattern!",
+            "helpMessage": "",
+            "autoFix": false
+        }
+    }
+}

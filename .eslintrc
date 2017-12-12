@@ -1,0 +1,7 @@
+{
+  "extends": [ "react-app" ],
+  "rules": {
+    "no-unused-vars": 2,
+    "jsx-a11y/href-no-hash": "off"
+  }
+}
