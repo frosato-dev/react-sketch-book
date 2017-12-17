@@ -1,21 +1,23 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Title from './Title/index'
-import Button from './Button/index'
+import Hero from './components/organisms/Hero'
+import News from './components/organisms/News'
+import { articles } from "./utils/mocks"
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <Title>Welcome to React</Title>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        <Button>This is a button</Button>
+      <div style={{ margin: 'auto', maxWidth: '1000px' }}>
+          <Hero
+              color="dark"
+              title="Sublime"
+              subtitle="Maecenas faucibus mollis interdum. Cras justo odio, dapibus ac facilisis in, egestas eget quam."
+              image="https://images.unsplash.com/photo-1509664158680-07c5032b51e5?q=80"
+              callToActions={[
+                  { title:"DISCOVER" },
+                  { title:"CONTACT US" },
+              ]}
+          />
+          <News articles={articles} />
       </div>
     );
   }

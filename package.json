@@ -31,7 +31,9 @@
         "fmt:test": "prettier --list-different --no-semi --tab-width=4 --single-quote --bracket-spacing --print-width 100 './**/*.{js,json,css}'",
         "fmt:staged": "prettier --no-semi --tab-width=4 --single-quote --bracket-spacing --print-width 100 --write",
         "eslint:staged": "eslint --fix --max-warnings=0",
-        "eslint:test": "eslint ./src index.js"
+        "eslint:test": "eslint ./src index.js",
+        "precommit": "lint-staged",
+        "commitmsg": "validate-commit-msg"
     },
     "devDependencies": {
         "husky": "^0.14.3",
@@ -43,7 +45,7 @@
         "@skpm/builder": "^0.2.0",
         "commander": "^2.12.2",
         "react": "^15.4.2",
-        "react-sketchapp": "^0.12.0",
+        "react-sketchapp": "^1.0.0-beta.5",
         "react-test-renderer": "^15.4.2",
         "recursive-readdir": "^2.2.1",
         "run-sketch-plugin": "^1.0.3"

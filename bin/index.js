@@ -23,7 +23,7 @@ if (!program.path) {
     process.exit(-1)
 }
 
-const projectFolder = path.resolve(__dirname, program.path)
+const projectFolder = path.resolve(process.env.PWD, program.path)
 
 // Get Regexp Param
 let regexp = DEFAULT_REGEXP
