@@ -28,7 +28,6 @@ export const groups = {}
  * @returns {ComponentGroup}
  */
 export const sketchOf = name => {
-
     if (!groups[name]) {
         groups[name] = new ComponentGroup(name)
     }

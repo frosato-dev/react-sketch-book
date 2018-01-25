@@ -1,7 +1,7 @@
 import React from 'react'
 import { render, Artboard, View, Text } from 'react-sketchapp'
-import { groups } from './../index'
-import './imports'
+import { groups } from './index'
+import '../tmp/imports'
 
 // @TODO inject with config
 const CONFIG = {

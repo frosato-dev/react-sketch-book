@@ -5,7 +5,7 @@
         {
             "name": "react-sketchapp: Beta",
             "identifier": "main",
-            "script": "./main.js"
+            "script": "./dist/main.js"
         }
     ],
     "menu": {

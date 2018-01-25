@@ -1,6 +1,6 @@
 {
     "name": "react-sketch-book",
-    "version": "0.0.34",
+    "version": "0.0.45",
     "description": "A module to easily build sketch Artboard with React Sketch.app or React Primitive",
     "keywords": [
         "sketch",
@@ -18,7 +18,7 @@
         "url": "git@github.com:frosato-ekino/react-sketch-book.git"
     },
     "license": "MIT",
-    "main": "index.js",
+    "main": "dist/index.js",
     "bin": {
         "react-sketch-book": "bin/index.js"
     },
@@ -26,14 +26,15 @@
         "watch": "skpm-build --watch",
         "render": "skpm-build --watch --run",
         "render:once": "skpm-build --run",
-        "postinstall": "skpm-build && skpm-link",
         "fmt": "prettier --no-semi --tab-width=4 --single-quote --bracket-spacing --print-width 100 --write './**/*.{js,json,css}'",
         "fmt:test": "prettier --list-different --no-semi --tab-width=4 --single-quote --bracket-spacing --print-width 100 './**/*.{js,json,css}'",
         "fmt:staged": "prettier --no-semi --tab-width=4 --single-quote --bracket-spacing --print-width 100 --write",
         "eslint:staged": "eslint --fix --max-warnings=0",
         "eslint:test": "eslint ./src index.js",
         "precommit": "lint-staged",
-        "commitmsg": "validate-commit-msg"
+        "commitmsg": "validate-commit-msg",
+        "build": "babel ./src -d ./dist",
+        "deploy": "npm run build && npm publish"
     },
     "devDependencies": {
         "husky": "^0.14.3",
@@ -48,11 +49,17 @@
         "react-sketchapp": "^1.0.0-beta.5",
         "react-test-renderer": "^15.4.2",
         "recursive-readdir": "^2.2.1",
-        "run-sketch-plugin": "^1.0.3"
+        "run-sketch-plugin": "^1.0.3",
+        "babel-cli": "^6.26.0",
+        "babel-preset-es2015": "^6.24.1",
+        "babel-preset-react": "^6.24.1",
+        "babel-plugin-transform-class-properties": "6.19.0",
+        "babel-plugin-transform-es2015-destructuring": "6.19.0",
+        "babel-plugin-transform-object-rest-spread": "6.20.2"
     },
     "skpm": {
-        "main": "components.sketchplugin",
-        "manifest": "src/manifest.json"
+        "main": "components-test.sketchplugin",
+        "manifest": "manifest.json"
     },
     "lint-staged": {
         "src/**/*.json": [

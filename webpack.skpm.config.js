@@ -1,5 +1,5 @@
 
-/*
+/* WIP Handle Image
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 const merge = require('lodash.merge')
@@ -22,6 +22,6 @@ merge(config, webpackConfig)
 module.exports = function (config, isPluginCommand) {
     if (isPluginCommand) {
         //merge(config, webpackConfig)
-        console.log(config)
+        //console.log(config)
     }
 }
