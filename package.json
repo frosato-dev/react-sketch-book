@@ -1,6 +1,6 @@
 {
     "name": "react-sketch-book",
-    "version": "0.0.46",
+    "version": "0.0.48",
     "description": "A module to easily build sketch Artboard with React Sketch.app or React Primitive",
     "keywords": [
         "sketch",

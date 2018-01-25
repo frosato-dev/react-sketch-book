@@ -6,7 +6,6 @@
 ![](https://github.com/frosato-ekino/react-sketch-book/blob/master/img/capture.png)
 
 ## Disclaimer :warning:
-* Only works by cloning the repo localy and using ```npm link``` (for now).
 * [react-primitives][react-primitives-url] is only compatible with react 15.0 and is required (or at least strongly recommended).
 * [React Skecth.app][react-sketchapp-url] current version works with [Sketch version 47][sketch-url], 48 is is broken.
 
@@ -38,11 +37,11 @@ npm i react-sketch-book --save -D
 ```
 {
   "scripts": {
-    "sketchbook": "react-sketch-book -p ../src"
+    "sketchbook": "react-sketch-book -p src"
   }
 }
 ```
-The `-p` or `--path` argument is the path of your project folder relative to your node_modules directory where react-sketch-book is setup.
+The `-p` or `--path` argument is the path of your project folder relative to your root directory where react-sketch-book is setup.
 
 ### Write your sketch files
 
@@ -61,7 +60,7 @@ If you don't want to use `.sketch.js` extension for your files, you can provide 
 ```
 {
   "scripts": {
-    "sketchbook": "react-sketch-book -p ../src -r /\w+.sketch.js/gi"
+    "sketchbook": "react-sketch-book -p src -r /\w+.sketch.js/gi"
   }
 }
 ```
