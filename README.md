@@ -74,6 +74,10 @@ Open a new Sketch document if you haven't already and run the following command.
 npm run sketchbook
 ```
 
+### Sample code
+
+* Download sketch (v47) and clone this [repository](https://github.com/frosato-ekino/react-sketch-book_sample)
+* run `npm install && npm run sketchbook`
 
 ## Thanks
 
