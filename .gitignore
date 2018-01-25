@@ -19,3 +19,6 @@ components.sketchplugin/
 
 # Sample
 example/node_modules
+
+# IDE
+.idea
